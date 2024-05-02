@@ -1,0 +1,5 @@
+rootProject.name = 'stock-board'
+
+include 'module-common'
+include 'service-stock'
+include 'service-board'

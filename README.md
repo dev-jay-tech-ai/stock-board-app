@@ -11,7 +11,7 @@ Github
 Docker      
 Redis    
 Kafka   
-MySQLDB   
+MySQL 8  
 MongoDB   
 RabbitMQ      
 Testcontainers    

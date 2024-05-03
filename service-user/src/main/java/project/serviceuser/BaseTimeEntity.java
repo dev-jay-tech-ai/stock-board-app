@@ -36,3 +36,4 @@ public abstract class BaseTimeEntity {
         this.updatedAt = Timestamp.from(Instant.now());
     }
 }
+

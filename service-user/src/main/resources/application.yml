@@ -68,12 +68,18 @@ mail:
 
   auth-code-expiration-millis: 1800000  # 30 * 60 * 1000 == 30분
 
-server:
-  port: 0
+---
 
 eureka:
+  instance:
+    prefer-ip-address: true
   client:
     register-with-eureka: true
     fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+---
+
+server:
+  port: 0

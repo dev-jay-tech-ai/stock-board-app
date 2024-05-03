@@ -1,11 +1,11 @@
 package project.serviceuser.model.entity;
 
-import project.serviceuser.BaseTimeEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.Where;
+import project.serviceuser.BaseTimeEntity;
 
 import javax.persistence.*;
 

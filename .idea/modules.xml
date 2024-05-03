@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module-common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/module-common.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module-common/stock-board.module-common.main.iml" filepath="$PROJECT_DIR$/.idea/modules/module-common/stock-board.module-common.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/api-gateway/stock-board.api-gateway.main.iml" filepath="$PROJECT_DIR$/.idea/modules/api-gateway/stock-board.api-gateway.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/server-discovery/stock-board.server-discovery.main.iml" filepath="$PROJECT_DIR$/.idea/modules/server-discovery/stock-board.server-discovery.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/service-board/stock-board.service-board.main.iml" filepath="$PROJECT_DIR$/.idea/modules/service-board/stock-board.service-board.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/service-stock/stock-board.service-stock.main.iml" filepath="$PROJECT_DIR$/.idea/modules/service-stock/stock-board.service-stock.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/service-user/stock-board.service-user.main.iml" filepath="$PROJECT_DIR$/.idea/modules/service-user/stock-board.service-user.main.iml" />
     </modules>
   </component>
 </project>

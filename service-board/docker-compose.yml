@@ -1,0 +1,24 @@
+version: "3.8"                               # 파일 규격 버전
+services:                                    # 이 항목 밑에 실행하려는 컨테이너들을 정의
+  service-user-redis:                        # 서비스명
+    container_name: service-board-redis   # 컨테이너 명
+    build:
+      dockerfile: Dockerfile
+      context: ./redis
+    image: zcx5674/service-stock-redis
+    ports:
+      - "6377:6379"
+  service-user-database:
+    container_name: service-board-database
+    build:
+      dockerfile: Dockerfile
+      context: ./database
+    image: zcx5674/service-board-database
+    environment:
+      - MYSQL_DATABASE=service-board
+      - MYSQL_ROOT_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+    volumes:
+      - ./database/config:/etc/mysql/conf.d
+      - ./database/init:/docker-entrypoint-initdb.d
+    ports:
+      - "3308:3306"

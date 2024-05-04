@@ -15,6 +15,10 @@ spring:
           uri: lb://service-board
           predicates:
             - Path=/api/v1/articles/**
+        - id: service-stock
+          uri: lb://service-stock
+          predicates:
+            - Path=/api/v1/stocks/**
         - id: discovery-server
           uri: http://localhost:8761
           # uri: http://eureka:password@${app.eureka-server}:8761

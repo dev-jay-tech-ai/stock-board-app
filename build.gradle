@@ -50,3 +50,22 @@ subprojects {
         useJUnitPlatform()
     }
 }
+
+project(':service-user') {
+    dependencies {
+        // implementation(testFixtures(project(":shboard-common")))
+    }
+}
+
+project(':service-board') {
+    dependencies {
+        implementation project(':service-user')
+        // implementation(testFixtures(project(":shboard-common")))
+    }
+}
+
+project(':api-gateway') {
+    dependencies {
+
+    }
+}

@@ -2,7 +2,33 @@ spring:
   application:
     name:
       api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: service-user
+          uri: lb://service-user
+          predicates:
+            - Path=/api/v1/users/**
+          # filters:
+          # - AuthorizationHeaderFilter
+        - id: service-board
+          uri: lb://service-board
+          predicates:
+            - Path=/api/v1/articles/**
+        - id: discovery-server
+          uri: http://localhost:8761
+          # uri: http://eureka:password@${app.eureka-server}:8761
+          predicates:
+            - Path=/eureka/web
+        ## Discover Server Static Resources Route
+        - id: discovery-server-static
+          uri: http://localhost:8761
+          predicates:
+            - Path=/eureka/**
+          filters: SetPath=/
 
+#      default-filters:
+#        - name: GlobalAuthFilter
 eureka:
   instance:
     prefer-ip-address: true
@@ -13,5 +39,4 @@ eureka:
       defaultZone: http://localhost:8761/eureka/
 
 server:
-  port:
-    0
+  port: 8080

@@ -1,33 +1,6 @@
 spring:
   application:
     name: server-discovery
-  cloud:
-    gateway:
-      routes:
-        - id: service-user
-          uri: lb://service-user
-          predicates:
-            - Path=/api/v1/users/**
-          filters:
-            - AuthorizationHeaderFilter
-        - id: service-board
-          uri: lb://service-news-feed
-          predicates:
-            - Path=/api/articles/**
-        - id: discovery-server
-          uri: http://localhost:8761
-          # uri: http://eureka:password@${app.eureka-server}:8761
-          predicates:
-            - Path=/eureka/web
-        ## Discover Server Static Resources Route
-        - id: discovery-server-static
-          uri: http://localhost:8761
-          predicates:
-            - Path=/eureka/**
-          filters: SetPath=/
-
-#      default-filters:
-#        - name: GlobalAuthFilter
 
 eureka:
   client:

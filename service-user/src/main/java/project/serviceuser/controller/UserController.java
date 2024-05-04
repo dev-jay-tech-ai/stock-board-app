@@ -17,6 +17,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
+import javax.ws.rs.Path;
+
 @Slf4j
 @RestController
 @RequestMapping("/api/v1/users")
@@ -63,6 +65,11 @@ public class UserController {
         User user = ClassUtils.getSafeCastInstance(authentication.getPrincipal(), User.class);
         userService.updatePassword(user, userId, request.getNewPassword());
         return Response.success("Password updated successfully");
+    }
+
+    @GetMapping("/{userId}")
+    public String getUserName(@PathVariable("userId") Integer userId, Authentication authentication) {
+        return userService.getUserNameById(userId);
     }
 
 }

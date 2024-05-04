@@ -21,6 +21,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -48,6 +49,16 @@ public class UserService {
                 () -> userRepository.findByUserName(userName).map(User::fromEntity).orElseThrow(
                         () -> new SimpleSnsApplicationException(ErrorCode.USER_NOT_FOUND, String.format("userName is %s", userName))
                 ));
+    }
+
+    public String getUserNameById(Integer userId) {
+        Optional<UserEntity> userOptional = userRepository.findById(userId);
+        if(userOptional.isPresent()) {
+            UserEntity userEntity = userOptional.get();
+            return userEntity.getUserName();
+        } else {
+            throw new SimpleSnsApplicationException(ErrorCode.USER_NOT_FOUND, String.format("userName is %s", userId));
+        }
     }
 
     public String login(String userName, String password) {

@@ -45,8 +45,7 @@ spring:
 
 ---
 jwt:
-  secret-key: fast-campus.simple_sns_2022_secret_key
-  # 30 days
+  secret-key: ${SECRET_KEY}
   token.expired-time-ms: 2592000000
 
 ---
@@ -82,4 +81,4 @@ eureka:
 ---
 
 server:
-  port: 0
+  port: 8083
